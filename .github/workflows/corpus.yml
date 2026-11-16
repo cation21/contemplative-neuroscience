@@ -1,0 +1,49 @@
+name: Build paper-finder corpus
+on:
+  schedule: [{ cron: "41 3 1 * *" }]   # monthly
+  workflow_dispatch:
+    inputs:
+      scale:
+        description: "Multiply query caps (1 = full, 0.1 = quick test)"
+        default: "1"
+
+permissions:
+  contents: write
+  pull-requests: write
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    timeout-minutes: 120
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with: { python-version: "3.12" }
+      - run: pip install pyyaml numpy umap-learn onnxruntime tokenizers "sentence-transformers>=3" --extra-index-url https://download.pytorch.org/whl/cpu
+      - name: Fetch papers (Europe PMC + arXiv; OpenAlex citations if a key is set)
+        env:
+          OPENALEX_API_KEY: ${{ secrets.OPENALEX_API_KEY }}
+        run: |
+          FLAGS=""
+          if [ -n "$OPENALEX_API_KEY" ]; then FLAGS="--citations"; fi
+          python clm/corpus/build_corpus.py --scale "${{ inputs.scale || '1' }}" $FLAGS
+      - name: Embed corpus and build map
+        # Embed with the model the site ships, so precomputed vectors always match the browser's
+        # query encoder. Falls back to the base model when no exported model is committed.
+        run: |
+          MODEL=$(python -c "import json;print(json.load(open('site/data/config.json'))['model'])")
+          if [ -f "site/${MODEL#./}/onnx/model_quantized.onnx" ]; then
+            python clm/export/embed_corpus.py --onnx "site/${MODEL#./}" --browser-model "$MODEL"
+          else
+            python clm/export/embed_corpus.py
+          fi
+      - uses: peter-evans/create-pull-request@v6
+        with:
+          branch: bot/corpus-refresh
+          title: "Refresh paper-finder corpus"
+          commit-message: "Refresh paper-finder corpus and embeddings"
+          add-paths: |
+            site/data/corpus.json
+            site/data/embeddings.*
+            site/data/map.json
+          body: Automated corpus refresh. Only openly licensed abstracts are included in `site/data/corpus.json`.

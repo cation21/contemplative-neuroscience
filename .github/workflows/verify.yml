@@ -1,0 +1,28 @@
+name: Verify identifiers and links
+on:
+  schedule: [{ cron: "17 4 * * 1" }]   # Mondays
+  workflow_dispatch:
+
+permissions:
+  contents: write
+  pull-requests: write
+
+jobs:
+  verify:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with: { python-version: "3.12" }
+      - run: pip install pyyaml
+      - name: Check DOIs against Crossref (marks matches as verified)
+        run: python scripts/verify_dois.py --write || echo "::warning::Some DOIs need attention, see log"
+      - name: Check links (report only)
+        run: python scripts/check_links.py
+      - run: python scripts/build_kb.py
+      - uses: peter-evans/create-pull-request@v6
+        with:
+          branch: bot/verify-identifiers
+          title: "Mark Crossref-confirmed DOIs as verified"
+          commit-message: "Mark Crossref-confirmed DOIs as verified"
+          body: Automated run of `scripts/verify_dois.py --write`. Check the workflow log for any DOI that failed.
