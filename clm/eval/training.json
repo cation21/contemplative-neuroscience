@@ -1,0 +1,21 @@
+{
+ "base_model": "sentence-transformers/all-MiniLM-L6-v2",
+ "output": "clm-neuro-minilm",
+ "loss": "MultipleNegativesRankingLoss (InfoNCE), scale 20",
+ "epochs": 3,
+ "batch": "64 per GPU (2 GPUs)",
+ "lr": "2e-5",
+ "warmup": "10% of steps",
+ "max_seq_length": 256,
+ "papers": 3447,
+ "train_papers": 3103,
+ "test_papers": 344,
+ "pairs": 6169,
+ "pair_kinds": {"title-abstract": 3103, "halves": 3066},
+ "hardware": "Kaggle, 2 x NVIDIA Tesla T4",
+ "runtime_s": 164.8,
+ "train_loss": 0.3611,
+ "software": "torch 2.11.0+cu130, sentence-transformers 5.7.0",
+ "date": "2026-11-16",
+ "source": "Kaggle notebook log (clm/kaggle/clm_finetune_kaggle.ipynb)"
+}

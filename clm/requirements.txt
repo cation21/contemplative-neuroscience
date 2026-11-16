@@ -1,0 +1,9 @@
+pyyaml>=6
+numpy>=1.26
+sentence-transformers>=3.0
+# optional
+umap-learn>=0.5          # nicer map layout (falls back to PCA)
+pytest>=8                # tests
+onnxruntime>=1.17       # embed_corpus.py --onnx (what CI uses)
+tokenizers>=0.15        # embed_corpus.py --onnx
+# optimum[onnxruntime]   # only for export_onnx.py; install in its own virtualenv (pins transformers < 4.58)

@@ -1,0 +1,28 @@
+# Search queries used to build the paper-finder corpus.
+# Europe PMC syntax: https://europepmc.org/searchsyntax
+# Each query is capped at `max` records. Results are merged and de-duplicated.
+
+europe_pmc:
+  - name: meditation-neuro
+    query: '(TITLE_ABS:"meditation" OR TITLE_ABS:"meditators" OR TITLE_ABS:"mindfulness") AND (TITLE_ABS:"EEG" OR TITLE_ABS:"electroencephalograph*" OR TITLE_ABS:"fMRI" OR TITLE_ABS:"MEG" OR TITLE_ABS:"neuroimaging" OR TITLE_ABS:"brain")'
+    max: 6000
+  - name: compassion-neuro
+    query: '(TITLE_ABS:"compassion" OR TITLE_ABS:"loving-kindness") AND (TITLE_ABS:"brain" OR TITLE_ABS:"neural" OR TITLE_ABS:"fMRI" OR TITLE_ABS:"EEG")'
+    max: 1500
+  - name: advanced-meditation
+    query: 'TITLE_ABS:"jhana" OR TITLE_ABS:"nondual awareness" OR TITLE_ABS:"non-dual awareness" OR (TITLE_ABS:"cessation" AND TITLE_ABS:"meditation") OR TITLE_ABS:"neurophenomenology"'
+    max: 1000
+  - name: mind-wandering-neuro
+    query: '(TITLE_ABS:"mind wandering" OR TITLE_ABS:"mind-wandering") AND (TITLE_ABS:"EEG" OR TITLE_ABS:"fMRI" OR TITLE_ABS:"default mode")'
+    max: 1500
+  - name: neurofeedback-meditation
+    query: '(TITLE_ABS:"neurofeedback" OR TITLE_ABS:"brain-computer interface") AND (TITLE_ABS:"meditation" OR TITLE_ABS:"mindfulness")'
+    max: 800
+  - name: attention-residue
+    query: 'TITLE_ABS:"attention residue" OR TITLE_ABS:"task-set inertia" OR ((TITLE_ABS:"task switching" OR TITLE_ABS:"task-switching" OR TITLE_ABS:"interruption" OR TITLE_ABS:"interruptions") AND (TITLE_ABS:"mindfulness" OR TITLE_ABS:"meditation"))'
+    max: 500
+
+arxiv:
+  - name: arxiv-meditation
+    query: 'abs:meditation AND (cat:q-bio.NC OR cat:eess.SP OR cat:cs.LG OR cat:cs.HC)'
+    max: 500
