@@ -1,0 +1,8 @@
+{
+  "model": "./models/clm-neuro-minilm",
+  "dtype": "q8",
+  "transformers_js": "https://cdn.jsdelivr.net/npm/@huggingface/transformers@4.3.2",
+  "europe_pmc": "https://www.ebi.ac.uk/europepmc/webservices/rest/search",
+  "openalex": "https://api.openalex.org/works",
+  "live_results": 50
+}

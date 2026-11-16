@@ -1,0 +1,93 @@
+{
+ "training": {
+  "base_model": "sentence-transformers/all-MiniLM-L6-v2",
+  "output": "clm-neuro-minilm",
+  "loss": "MultipleNegativesRankingLoss (InfoNCE), scale 20",
+  "epochs": 3,
+  "batch": "64 per GPU (2 GPUs)",
+  "lr": "2e-5",
+  "warmup": "10% of steps",
+  "max_seq_length": 256,
+  "papers": 3447,
+  "train_papers": 3103,
+  "test_papers": 344,
+  "pairs": 6169,
+  "pair_kinds": {
+   "title-abstract": 3103,
+   "halves": 3066
+  },
+  "hardware": "Kaggle, 2 x NVIDIA Tesla T4",
+  "runtime_s": 164.8,
+  "train_loss": 0.3611,
+  "software": "torch 2.11.0+cu130, sentence-transformers 5.7.0",
+  "date": "2026-11-16",
+  "source": "Kaggle notebook log (clm/kaggle/clm_finetune_kaggle.ipynb)"
+ },
+ "results": {
+  "all-MiniLM-L6-v2": {
+   "title->abstract": {
+    "recall@1": 0.8983,
+    "recall@5": 0.9826,
+    "recall@10": 0.9913,
+    "mrr": 0.9366,
+    "median_rank": 1.0,
+    "n": 344
+   },
+   "half->half": {
+    "recall@1": 0.7638,
+    "recall@5": 0.8921,
+    "recall@10": 0.9242,
+    "mrr": 0.8218,
+    "median_rank": 1.0,
+    "n": 343
+   }
+  },
+  "clm-neuro-minilm": {
+   "title->abstract": {
+    "recall@1": 0.9215,
+    "recall@5": 0.9913,
+    "recall@10": 0.9942,
+    "mrr": 0.9527,
+    "median_rank": 1.0,
+    "n": 344
+   },
+   "half->half": {
+    "recall@1": 0.8892,
+    "recall@5": 0.9854,
+    "recall@10": 0.9913,
+    "mrr": 0.9297,
+    "median_rank": 1.0,
+    "n": 343
+   }
+  },
+  "specter2_base": {
+   "title->abstract": {
+    "recall@1": 0.6221,
+    "recall@5": 0.8576,
+    "recall@10": 0.9186,
+    "mrr": 0.7288,
+    "median_rank": 1.0,
+    "n": 344
+   },
+   "half->half": {
+    "recall@1": 0.656,
+    "recall@5": 0.8222,
+    "recall@10": 0.8834,
+    "mrr": 0.7365,
+    "median_rank": 1.0,
+    "n": 343
+   }
+  }
+ },
+ "finetuned": "clm-neuro-minilm",
+ "labels": {
+  "all-MiniLM-L6-v2": "Base MiniLM",
+  "clm-neuro-minilm": "Fine-tuned (this site)",
+  "specter2_base": "SPECTER2 base"
+ },
+ "caveats": [
+  "The test tasks have the same shape as the training pairs, only on unseen papers, so part of the gain is the model getting better at exactly that task. A citation-based or human-judged test would be stronger evidence.",
+  "SPECTER2 was run without its task adapter and with mean pooling, so its numbers understate it.",
+  "One training run and one split: there are no error bars yet."
+ ]
+}
