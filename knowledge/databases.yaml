@@ -1,0 +1,114 @@
+# Literature and data infrastructure.
+# kind: literature | data-archive | meta-analysis
+# auth: none | free-key | account
+databases:
+
+- id: europe-pmc
+  name: Europe PMC
+  kind: literature
+  auth: none
+  coverage: "40M+ life-science records, ~8M full texts"
+  api: https://www.ebi.ac.uk/europepmc/webservices/rest/search
+  url: https://europepmc.org
+  notes: >
+    No key needed. resultType=core returns abstracts, MeSH terms and licence info. Used by
+    the finder's live search and the corpus builder.
+
+- id: openalex
+  name: OpenAlex
+  kind: literature
+  auth: free-key
+  coverage: "250M+ works, CC0 metadata and citation graph"
+  api: https://api.openalex.org
+  url: https://openalex.org
+  notes: >
+    Since 13 Feb 2026 the API needs a free key (about $1/day of free usage; keyless is a
+    small demo quota). Abstracts come as an inverted index. Best for citation pairs. Bulk
+    snapshot remains free on S3.
+
+- id: semantic-scholar
+  name: Semantic Scholar API
+  kind: literature
+  auth: none
+  coverage: "200M+ papers, citations, SPECTER embeddings"
+  api: https://api.semanticscholar.org
+  url: https://www.semanticscholar.org
+  notes: >
+    Recommendations endpoint suggests recent papers from positive/negative seed papers.
+    Low anonymous rate limits; request a key for heavy use.
+
+- id: pubmed
+  name: PubMed (NCBI E-utilities)
+  kind: literature
+  auth: none
+  coverage: "36M+ biomedical citations"
+  api: https://eutils.ncbi.nlm.nih.gov/entrez/eutils/
+  url: https://pubmed.ncbi.nlm.nih.gov
+  notes: MeSH term "Meditation" is the cleanest filter. Optional key raises rate limits.
+
+- id: arxiv
+  name: arXiv
+  kind: literature
+  auth: none
+  coverage: "q-bio.NC, eess.SP, cs.LG preprints"
+  api: http://export.arxiv.org/api/query
+  url: https://arxiv.org
+  notes: Metadata (including abstracts) is CC0, so it is safe to redistribute in the corpus.
+
+- id: biorxiv
+  name: bioRxiv / medRxiv
+  kind: literature
+  auth: none
+  coverage: "Life-science and clinical preprints"
+  api: https://api.biorxiv.org
+  url: https://www.biorxiv.org
+  notes: Where many neuroimaging meditation papers appear first.
+
+- id: openneuro
+  name: OpenNeuro
+  kind: data-archive
+  auth: none
+  coverage: "1,000+ BIDS datasets: MRI, EEG, MEG, iEEG, PET"
+  api: https://openneuro.org/crn/graphql
+  url: https://openneuro.org
+  notes: Every dataset passes BIDS validation; most are CC0.
+
+- id: nemar
+  name: NEMAR
+  kind: data-archive
+  auth: none
+  coverage: "OpenNeuro EEG/MEG with compute at SDSC"
+  url: https://nemar.org
+  notes: Run EEGLAB/MNE pipelines on OpenNeuro electrophysiology without downloading.
+
+- id: dandi
+  name: DANDI Archive
+  kind: data-archive
+  auth: account
+  coverage: "Cellular and systems neurophysiology (NWB)"
+  url: https://dandiarchive.org
+  notes: Mainly animal and intracranial data; relevant for mechanistic work.
+
+- id: zenodo
+  name: Zenodo
+  kind: data-archive
+  auth: none
+  coverage: "General-purpose research data with DOIs"
+  url: https://zenodo.org
+  notes: Hosts several meditation EEG datasets, including the Delorme meditation set.
+
+- id: huggingface-datasets
+  name: Hugging Face Datasets
+  kind: data-archive
+  auth: none
+  coverage: "ML-ready datasets, incl. EEGDash mirrors and L-FAME"
+  url: https://huggingface.co/datasets
+  notes: Increasingly where EEG benchmarks are released.
+
+- id: neurostore
+  name: NeuroStore / Neurosynth
+  kind: meta-analysis
+  auth: account
+  coverage: "30,000+ studies with activation coordinates"
+  url: https://compose.neurosynth.org
+  notes: Basis for custom meta-analyses of meditation fMRI.

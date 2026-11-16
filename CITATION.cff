@@ -1,0 +1,11 @@
+cff-version: 1.2.0
+message: "If you use this knowledge base or the paper finder, please cite it."
+title: "Contemplative Neuroscience: an open knowledge base and on-device paper finder"
+type: software
+authors:
+  - family-names: Pandey
+    given-names: Ananya
+repository-code: "https://github.com/cation21/contemplative-neuroscience"
+url: "https://cation21.github.io/contemplative-neuroscience/"
+license: MIT
+keywords: [meditation, contemplative neuroscience, EEG, fMRI, contrastive learning, semantic search]

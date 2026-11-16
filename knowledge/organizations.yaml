@@ -1,0 +1,82 @@
+# Labs, centres, consortia, funders and meetings.
+# kind: lab | centre | consortium | funder | society | meeting
+organizations:
+
+- id: center-healthy-minds
+  name: Center for Healthy Minds (UW–Madison)
+  kind: centre
+  location: Madison, USA
+  focus: Well-being training, compassion, long-term practitioners, large RCTs
+  url: https://centerhealthyminds.org
+
+- id: mgh-meditation-research-program
+  name: Meditation Research Program (MGH / Harvard Medical School)
+  kind: lab
+  location: Boston, USA
+  focus: Advanced meditation (jhana, cessation), 7T fMRI, neurophenomenology
+  url: https://meditation.mgh.harvard.edu
+
+- id: lutz-lab-lyon
+  name: Lutz team, Lyon Neuroscience Research Center (CRNL)
+  kind: lab
+  location: Lyon, France
+  focus: Neurophenomenology, meta-awareness, active-inference models of meditation
+  url: https://www.crnl.fr
+
+- id: singer-social-neuroscience
+  name: Social Neuroscience Lab (Max Planck Society), Berlin
+  kind: lab
+  location: Berlin, Germany
+  focus: ReSource Project, compassion and empathy training, contemplative dyads
+  url: https://www.resource-project.org/en/
+
+- id: slagter-lab
+  name: Slagter lab, Vrije Universiteit Amsterdam
+  kind: lab
+  location: Amsterdam, Netherlands
+  focus: Attention, predictive processing and meditation
+  url: https://research.vu.nl
+
+- id: delorme-sccn
+  name: Swartz Center for Computational Neuroscience (UCSD) / CerCo Toulouse
+  kind: lab
+  location: San Diego, USA / Toulouse, France
+  focus: EEGLAB, NEMAR, EEGDash, meditation EEG and open data
+  url: https://sccn.ucsd.edu
+
+- id: mind-and-life
+  name: Mind & Life Institute
+  kind: funder
+  location: Charlottesville, USA
+  focus: >
+    Founded 1991. Summer Research Institute and research grants (Varela and others, up to
+    $25,000) for early-career researchers who attended the Summer Research Institute.
+  url: https://www.mindandlife.org/grants/
+
+- id: bial-foundation
+  name: BIAL Foundation
+  kind: funder
+  location: Porto, Portugal
+  focus: Grants for psychophysiology, including several advanced-meditation studies
+  url: https://www.bial.com/en/bial-foundation/
+
+- id: enigma-meditation-org
+  name: ENIGMA-Meditation
+  kind: consortium
+  location: International
+  focus: Pooled, harmonised meditation neuroimaging
+  url: https://enigma.ini.usc.edu/
+
+- id: iscr
+  name: International Society for Contemplative Research (ISCR)
+  kind: society
+  location: International
+  focus: Professional society and conference for contemplative science
+  url: https://www.contemplativeresearch.org
+
+- id: neurotechx
+  name: NeuroTechX
+  kind: society
+  location: International (online)
+  focus: Neurotech community, hackathons, EEG-ExPy; useful for BCI-flavoured meditation projects
+  url: https://neurotechx.com

@@ -1,0 +1,15 @@
+__pycache__/
+*.pyc
+.pytest_cache/
+clm/data/
+clm/models/
+site/models/*/_tmp/
+tests/screenshots/
+node_modules/
+.DS_Store
+
+# The site loads only the int8 model; the fp32 export (90 MB) stays local.
+site/models/*/onnx/model.onnx
+site/models/*/onnx/model.onnx_data
+.venv/
+*.egg-info/

@@ -1,0 +1,101 @@
+# Open datasets useful for contemplative neuroscience.
+# access: open | registration | on-request | announced
+datasets:
+
+- id: delorme-meditation-eeg
+  name: "BIDS formatted EEG meditation experiment data"
+  modality: [EEG]
+  subjects: 24
+  practices: [focused-attention, open-monitoring]
+  description: >
+    64-channel Biosemi EEG from expert and non-expert meditators, interrupted roughly every
+    two minutes by probes rating concentration and mind wandering. Basis of Brandmeyer &
+    Delorme (2018). About 9 GB, BIDS formatted. Also mirrored on OpenNeuro.
+  access: open
+  url: https://zenodo.org/record/2536267
+  paper: brandmeyer-2018-mind-wandering
+  tags: [experience-sampling, mind-wandering, BIDS]
+
+- id: l-fame
+  name: "L-FAME: Longitudinal Focused Attention Meditation EEG"
+  modality: [EEG]
+  subjects: 74
+  practices: [focused-attention, mantra]
+  description: >
+    64-channel EEG and questionnaires before and after six weeks of breath focus or one of
+    two mantra practices, with benchmark tasks and code. Hosted on Hugging Face.
+  access: open
+  url: https://huggingface.co/datasets/L-FAME-Dataset-Benchmark/L-FAME
+  paper: li-2026-l-fame
+  tags: [longitudinal, benchmark, machine-learning]
+
+- id: psiconnect
+  name: "PsiConnect: multimodal neuroimaging under psilocybin with meditation training"
+  modality: [fMRI, EEG, sMRI, DWI]
+  subjects: 62
+  practices: [mindfulness-program]
+  description: >
+    Multi-echo fMRI and EEG at rest and during guided meditation, music and movie watching,
+    before and after psilocybin; half the cohort did eight weeks of meditation training.
+    Described as an openly curated, reusable dataset.
+  access: announced
+  url: null   # add the repository link once released
+  note: "Check the PsiConnect data paper for the release location."
+  tags: [psychedelics, naturalistic, multi-echo]
+
+- id: openneuro-search
+  name: "OpenNeuro: meditation datasets"
+  modality: [EEG, MEG, fMRI, sMRI]
+  description: >
+    Search OpenNeuro for "meditation" or "mindfulness" to find BIDS datasets; every upload
+    passes BIDS validation, and most are CC0.
+  access: open
+  url: https://openneuro.org/search?query=meditation
+  tags: [archive, BIDS, CC0]
+
+- id: eegdash-catalog
+  name: "EEGDash catalog (OpenNeuro + NEMAR, 700+ datasets)"
+  modality: [EEG, MEG, iEEG, fNIRS, EMG]
+  description: >
+    Not a meditation dataset itself: a registry that loads any public BIDS EEG dataset into
+    PyTorch/braindecode with one call. Useful for pretraining or pooling resting-state data
+    as controls.
+  access: open
+  url: https://huggingface.co/EEGDash
+  paper: aristimunha-2026-eegdash
+  tags: [loader, machine-learning, pretraining]
+
+- id: resource-project
+  name: "ReSource Project (Max Planck)"
+  modality: [sMRI, fMRI, physiology, behavior]
+  subjects: "~300 (multiple cohorts)"
+  practices: [focused-attention, compassion, mixed]
+  description: >
+    Nine-month, three-module mental training study (Presence, Affect, Perspective) run
+    2012–2016 in Leipzig and Berlin. Data are not openly posted; publications are listed by
+    the Social Neuroscience Lab and data access is by collaboration.
+  access: on-request
+  url: https://www.resource-project.org/en/
+  tags: [longitudinal, compassion, dyads]
+
+- id: enigma-meditation
+  name: "ENIGMA-Meditation consortium"
+  modality: [fMRI, sMRI]
+  description: >
+    Not a public download: a consortium pooling meditation neuroimaging datasets for
+    harmonised mega-analysis. Labs with data can join.
+  access: on-request
+  url: https://enigma.ini.usc.edu/
+  paper: ganesan-2025-enigma-meditation
+  tags: [consortium, mega-analysis]
+
+- id: neurostore
+  name: "NeuroStore (Neurosynth Compose)"
+  modality: [fMRI]
+  description: >
+    30,000+ studies with pre-extracted activation coordinates. Filter for meditation studies
+    to run your own coordinate-based meta-analysis in Neurosynth Compose.
+  access: open
+  url: https://compose.neurosynth.org/
+  paper: kent-2026-neurosynth-compose
+  tags: [coordinates, meta-analysis]

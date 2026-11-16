@@ -1,0 +1,197 @@
+# Software for contemplative neuroscience research.
+# category: analysis | real-time | hardware | machine-learning | meta-analysis | standards | text-embedding
+tools:
+
+# ---------- Analysis ----------
+- id: mne-python
+  name: MNE-Python
+  category: analysis
+  modality: [EEG, MEG, iEEG]
+  language: Python
+  description: Preprocessing, ICA, time-frequency, source imaging and statistics for M/EEG. The default starting point.
+  url: https://mne.tools
+  paper: gramfort-2013-mne
+
+- id: specparam
+  name: specparam (formerly FOOOF)
+  category: analysis
+  modality: [EEG, MEG]
+  language: Python
+  description: >
+    Splits power spectra into aperiodic (1/f) and periodic peaks. Version 2.0 is still a
+    release candidate and adds time-resolved and event-related models. Re-test any
+    "alpha/theta increase" claim with it.
+  url: https://specparam-tools.github.io
+  paper: donoghue-2020-specparam
+
+- id: mne-bids
+  name: MNE-BIDS
+  category: standards
+  modality: [EEG, MEG, iEEG]
+  language: Python
+  description: Read and write BIDS datasets from MNE; needed to load OpenNeuro data cleanly.
+  url: https://mne.tools/mne-bids
+
+- id: eeglab
+  name: EEGLAB
+  category: analysis
+  modality: [EEG]
+  language: MATLAB
+  description: Long-standing MATLAB toolbox (ICA, plugins, NEMAR integration), used by many meditation EEG studies.
+  url: https://sccn.ucsd.edu/eeglab
+
+- id: neurokit2
+  name: NeuroKit2
+  category: analysis
+  modality: [physiology]
+  language: Python
+  description: Heart rate variability, respiration, EDA and ECG processing, for the physiology side of practice studies.
+  url: https://github.com/neuropsychology/NeuroKit
+
+- id: fmriprep
+  name: fMRIPrep
+  category: analysis
+  modality: [fMRI]
+  language: Python
+  description: Robust, standardised fMRI preprocessing for BIDS data; the usual first step before harmonised analyses.
+  url: https://fmriprep.org
+
+- id: nilearn
+  name: Nilearn
+  category: analysis
+  modality: [fMRI]
+  language: Python
+  description: Connectivity, decoding and GLMs on fMRI in Python.
+  url: https://nilearn.github.io
+
+# ---------- Meta-analysis ----------
+- id: nimare
+  name: NiMARE
+  category: meta-analysis
+  modality: [fMRI]
+  language: Python
+  description: Coordinate- and image-based meta-analysis (ALE, MKDA and more); the engine behind Neurosynth Compose.
+  url: https://nimare.readthedocs.io
+
+- id: neurosynth-compose
+  name: Neurosynth Compose
+  category: meta-analysis
+  modality: [fMRI]
+  language: Web
+  description: Curate studies, annotate them and run reproducible meta-analyses in the browser, backed by NeuroStore.
+  url: https://compose.neurosynth.org
+  paper: kent-2026-neurosynth-compose
+
+# ---------- Real-time and hardware ----------
+- id: lsl
+  name: Lab Streaming Layer (LSL)
+  category: real-time
+  modality: [EEG, physiology]
+  language: C/C++, Python
+  description: Time-synchronised streaming across devices; supported by most research EEG systems.
+  url: https://labstreaminglayer.readthedocs.io
+
+- id: mne-lsl
+  name: MNE-LSL
+  category: real-time
+  modality: [EEG]
+  language: Python
+  description: Real-time streams and buffers integrated with MNE-Python, for neurofeedback-guided meditation.
+  url: https://mne.tools/mne-lsl
+  paper: scheltienne-2025-mne-lsl
+
+- id: brainflow
+  name: BrainFlow
+  category: hardware
+  modality: [EEG, EMG, ECG]
+  language: Multi-language
+  description: One API for many consumer and research biosensors (OpenBCI, Muse and others).
+  url: https://brainflow.org
+
+- id: openbci
+  name: OpenBCI
+  category: hardware
+  modality: [EEG]
+  language: Hardware + GUI
+  description: Open hardware boards (Cyton, Ganglion) and GUI; a low-cost route to running your own meditation EEG study.
+  url: https://openbci.com
+
+- id: eeg-notebooks
+  name: EEG-Notebooks
+  category: real-time
+  modality: [EEG]
+  language: Python
+  description: Ready-made experiments for consumer EEG headsets, good for teaching and pilot data.
+  url: https://github.com/NeuroTechX/EEG-ExPy
+
+# ---------- Machine learning ----------
+- id: braindecode
+  name: braindecode
+  category: machine-learning
+  modality: [EEG, MEG]
+  language: Python
+  description: Deep learning for EEG in PyTorch, with model zoo and dataset loaders.
+  url: https://braindecode.org
+
+- id: eegdash
+  name: EEGDash
+  category: machine-learning
+  modality: [EEG, MEG, iEEG, fNIRS]
+  language: Python
+  description: Streams 700+ public BIDS datasets from OpenNeuro and NEMAR into PyTorch / braindecode.
+  url: https://github.com/eegdash/EEGDash
+  paper: aristimunha-2026-eegdash
+
+- id: labram
+  name: LaBraM
+  category: machine-learning
+  modality: [EEG]
+  language: Python
+  description: EEG foundation model; fine-tune on small meditation datasets instead of training from scratch.
+  url: https://github.com/935963004/LaBraM
+  paper: jiang-2024-labram
+
+- id: cbramod
+  name: CBraMod
+  category: machine-learning
+  modality: [EEG]
+  language: Python
+  description: EEG foundation model with criss-cross attention; a strong recent baseline in benchmarks.
+  url: https://github.com/wjq-learning/CBraMod
+  paper: wang-2024-cbramod
+
+- id: eeg-fm-bench
+  name: EEG-FM-Bench
+  category: machine-learning
+  modality: [EEG]
+  language: Python
+  description: Benchmark for comparing EEG foundation models on standard tasks before choosing one.
+  url: https://arxiv.org/abs/2508.17742
+  paper: xiong-2025-eeg-fm-bench
+
+# ---------- Text embeddings (used by the CLM finder) ----------
+- id: sentence-transformers
+  name: sentence-transformers
+  category: text-embedding
+  modality: [text]
+  language: Python
+  description: Training and inference for contrastive text encoders; used in clm/ to fine-tune and embed the corpus.
+  url: https://www.sbert.net
+  paper: reimers-2019-sbert
+
+- id: transformers-js
+  name: Transformers.js
+  category: text-embedding
+  modality: [text]
+  language: JavaScript
+  description: Runs ONNX models in the browser (WASM or WebGPU); powers the on-device paper finder.
+  url: https://huggingface.co/docs/transformers.js
+
+- id: specter2
+  name: SPECTER2
+  category: text-embedding
+  modality: [text]
+  language: Python
+  description: Scientific paper embeddings trained on citation triplets; a heavier but stronger alternative encoder.
+  url: https://github.com/allenai/SPECTER2
+  paper: singh-2022-scirepeval

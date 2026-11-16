@@ -1,0 +1,97 @@
+# Core concepts. Short definitions in our own words, with links to papers in papers.yaml.
+concepts:
+
+- id: focused-attention
+  name: Focused attention (FA)
+  definition: >
+    Holding attention on one object (often the breath), noticing when it drifts and bringing
+    it back. The cycle of wandering, noticing and returning is itself a common study target.
+  papers: [lutz-2008-attention-regulation, hasenkamp-2012-mind-wandering, brefczynski-lewis-2007-attentional-expertise]
+
+- id: open-monitoring
+  name: Open monitoring (OM)
+  definition: >
+    Non-selective awareness of whatever arises, without fixing on an object. Vipassana and
+    many "open presence" practices fall here.
+  papers: [lutz-2008-attention-regulation, slagter-2007-attentional-blink, cahn-2010-vipassana-gamma]
+
+- id: compassion
+  name: Compassion and loving-kindness
+  definition: >
+    Constructive practices that cultivate care for others' suffering or wishes for their
+    well-being. Distinct in brain and behaviour from empathic distress.
+  papers: [lutz-2008-compassion-emotion, klimecki-2014-empathy-compassion, weng-2013-compassion-altruism]
+
+- id: non-dual
+  name: Non-dual awareness
+  definition: >
+    Practices aiming at awareness without a felt split between observer and observed.
+    Studied mostly in very experienced practitioners.
+  papers: [josipovic-2014-nondual, dahl-2015-self]
+
+- id: mind-wandering
+  name: Mind wandering
+  definition: >
+    Thought that drifts away from the current task. Meditation studies use it both as the
+    thing being trained and as a control state.
+  papers: [christoff-2016-spontaneous-thought, brandmeyer-2018-mind-wandering, mrazek-2013-gre]
+
+- id: default-mode-network
+  name: Default mode network (DMN)
+  definition: >
+    Medial prefrontal, posterior cingulate and parietal regions active during rest and
+    self-related thought. Reduced DMN activity is one of the most reported meditation findings.
+  papers: [raichle-2001-default-mode, brewer-2011-dmn, garrison-2015-dmn-beyond-task]
+
+- id: neurophenomenology
+  name: Neurophenomenology
+  definition: >
+    Pairing careful first-person reports with neural data so experience constrains the
+    analysis. Proposed by Varela in 1996; now central to advanced-meditation research.
+  papers: [lutz-2015-phenomenological-matrix, chowdhury-2023-cessation-eeg, yang-2024-jhana-7t]
+
+- id: advanced-meditation
+  name: Advanced meditation (jhana, cessation)
+  definition: >
+    States and stages reported by highly experienced practitioners, such as the absorptions
+    (jhanas) or cessation events where experience briefly stops. Usually studied with
+    intensive sampling of one or a few adepts.
+  papers: [chowdhury-2023-cessation-eeg, van-lutterveld-2024-cessation-network, yang-2024-jhana-7t, chowdhury-2025-jhana-multimodal]
+
+- id: predictive-processing
+  name: Predictive processing and active inference
+  definition: >
+    Frameworks in which the brain minimises prediction error. Meditation is modelled as
+    changing the precision (confidence) given to predictions and sensations.
+  papers: [laukkonen-2021-many-to-none, sandved-smith-2021-mental-action]
+
+- id: aperiodic-activity
+  name: Aperiodic (1/f) EEG activity
+  definition: >
+    The broadband, non-oscillatory part of the power spectrum. Changes in it can masquerade
+    as band-power changes, so newer analyses separate the two.
+  papers: [donoghue-2020-specparam, lin-2025-eeg-mindfulness-methods]
+
+- id: state-vs-trait
+  name: State versus trait effects
+  definition: >
+    State effects occur during practice; trait effects persist outside it, e.g. at rest or in
+    sleep. Long-term-practitioner studies try to separate them.
+  papers: [cahn-2006-states-traits, ferrarelli-2013-sleep-gamma]
+
+- id: active-control
+  name: Active control groups
+  definition: >
+    Comparison programmes matched for expectation and effort but without meditation (e.g. the
+    Health Enhancement Program). Needed to attribute effects to meditation itself.
+  papers: [kral-2022-no-structural-change, van-dam-2018-mind-the-hype]
+
+- id: attention-residue
+  name: Attention residue
+  definition: >
+    Sophie Leroy's term for the part of attention that stays on a previous task after
+    switching to a new one, lowering performance on the new task; it is larger when the first
+    task is unfinished or will be resumed under time pressure. Cognitive psychology studies
+    the same carryover as task-set inertia. Brief mindfulness practice may clear it, though
+    evidence is still behavioural and there is little neuroimaging work yet.
+  papers: [leroy-2009-attention-residue, leroy-2018-tasks-interrupted, kuo-2015-reset-task-set]

@@ -1,0 +1,1266 @@
+# Curated papers in contemplative neuroscience.
+#
+# Fields
+#   id            short unique slug (firstauthor-year-keyword)
+#   title         exact published title
+#   authors       first author + "et al." (full lists come from the corpus build)
+#   year, venue
+#   doi | arxiv | url   at least one identifier
+#   verified      true when the identifier was checked against a live source while curating;
+#                 false entries are checked by scripts/verify_dois.py in CI
+#   type          empirical | review | meta-analysis | theory | methods | dataset | tool
+#   practices     focused-attention | open-monitoring | compassion | non-dual | mindfulness-program
+#                 | advanced | mantra | mixed | none
+#   modalities    EEG | MEG | fMRI | sMRI | NIBS | physiology | behavior | computational | none
+#   topics        free tags
+#   summary       one or two sentences in our own words (not the abstract)
+
+papers:
+
+# ---------- Foundations and frameworks ----------
+- id: lutz-2008-attention-regulation
+  title: "Attention regulation and monitoring in meditation"
+  authors: "Lutz A, et al."
+  year: 2008
+  venue: Trends in Cognitive Sciences
+  doi: 10.1016/j.tics.2008.01.005
+  verified: true
+  type: theory
+  practices: [focused-attention, open-monitoring]
+  modalities: [none]
+  topics: [taxonomy, attention, meta-awareness]
+  summary: >
+    Introduces the focused-attention versus open-monitoring distinction that most later
+    studies use to classify meditation styles, and links each to attention networks.
+
+- id: dahl-2015-self
+  title: "Reconstructing and deconstructing the self: cognitive mechanisms in meditation practice"
+  authors: "Dahl CJ, et al."
+  year: 2015
+  venue: Trends in Cognitive Sciences
+  doi: 10.1016/j.tics.2015.07.001
+  verified: true
+  type: theory
+  practices: [focused-attention, open-monitoring, compassion, non-dual]
+  modalities: [none]
+  topics: [taxonomy, self, attentional-constructive-deconstructive]
+  summary: >
+    Proposes three families of practice (attentional, constructive, deconstructive) organised
+    around how they change self-related processing.
+
+- id: dahl-2020-plasticity-wellbeing
+  title: "The plasticity of well-being: A training-based framework for the cultivation of human flourishing"
+  authors: "Dahl CJ, et al."
+  year: 2020
+  venue: PNAS
+  doi: 10.1073/pnas.2014859117
+  verified: true
+  type: theory
+  practices: [mixed]
+  modalities: [none]
+  topics: [well-being, awareness, connection, insight, purpose]
+  summary: >
+    Frames well-being as trainable skills (awareness, connection, insight, purpose) and maps
+    each onto candidate neural and psychological mechanisms.
+
+- id: tang-2015-neuroscience-mindfulness
+  title: "The neuroscience of mindfulness meditation"
+  authors: "Tang YY, et al."
+  year: 2015
+  venue: Nature Reviews Neuroscience
+  doi: 10.1038/nrn3916
+  verified: true
+  type: review
+  practices: [mindfulness-program, mixed]
+  modalities: [fMRI, sMRI, EEG]
+  topics: [attention, emotion-regulation, self-awareness, overview]
+  summary: >
+    Widely cited overview of attention control, emotion regulation and self-awareness as the
+    three components through which mindfulness is thought to act on the brain.
+
+- id: holzel-2011-mechanisms
+  title: "How does mindfulness meditation work? Proposing mechanisms of action from a conceptual and neural perspective"
+  authors: "Hölzel BK, et al."
+  year: 2011
+  venue: Perspectives on Psychological Science
+  doi: 10.1177/1745691611419671
+  verified: true
+  type: theory
+  practices: [mindfulness-program]
+  modalities: [none]
+  topics: [mechanisms, body-awareness, emotion-regulation, self]
+  summary: >
+    Breaks mindfulness into interacting mechanisms (attention regulation, body awareness,
+    emotion regulation, change in self-perspective) with proposed neural substrates.
+
+- id: lutz-2015-phenomenological-matrix
+  title: "Investigating the phenomenological matrix of mindfulness-related practices from a neurocognitive perspective"
+  authors: "Lutz A, et al."
+  year: 2015
+  venue: American Psychologist
+  doi: 10.1037/a0039585
+  verified: true
+  type: theory
+  practices: [mindfulness-program, focused-attention, open-monitoring, non-dual]
+  modalities: [none]
+  topics: [phenomenology, meta-awareness, dereification, taxonomy]
+  summary: >
+    Describes practices as positions in a multidimensional space (object orientation,
+    meta-awareness, dereification and others) instead of discrete categories.
+
+- id: laukkonen-2021-many-to-none
+  title: "From many to (n)one: Meditation and the plasticity of the predictive mind"
+  authors: "Laukkonen RE, Slagter HA"
+  year: 2021
+  venue: Neuroscience & Biobehavioral Reviews
+  doi: 10.1016/j.neubiorev.2021.06.021
+  verified: true
+  type: theory
+  practices: [focused-attention, open-monitoring, non-dual, advanced]
+  modalities: [computational]
+  topics: [predictive-processing, active-inference, cessation, self]
+  summary: >
+    Recasts meditation within predictive processing: practice progressively flattens the
+    predictive hierarchy, with cessation as the limit case.
+
+- id: sandved-smith-2021-mental-action
+  title: "Towards a computational phenomenology of mental action: modelling meta-awareness and attentional control with deep parametric active inference"
+  authors: "Sandved-Smith L, et al."
+  year: 2021
+  venue: Neuroscience of Consciousness
+  doi: 10.1093/nc/niab018
+  verified: true
+  type: theory
+  practices: [focused-attention]
+  modalities: [computational]
+  topics: [active-inference, meta-awareness, mind-wandering, simulation]
+  summary: >
+    Builds a hierarchical active-inference model in which meta-awareness controls attentional
+    precision, and simulates mind-wandering and its correction during breath focus.
+
+- id: van-dam-2018-mind-the-hype
+  title: "Mind the hype: A critical evaluation and prescriptive agenda for research on mindfulness and meditation"
+  authors: "Van Dam NT, et al."
+  year: 2018
+  venue: Perspectives on Psychological Science
+  doi: 10.1177/1745691617709589
+  verified: true
+  type: review
+  practices: [mindfulness-program]
+  modalities: [none]
+  topics: [methodology, critique, replication, definitions]
+  summary: >
+    Critiques weak definitions, small samples and overstated claims in mindfulness research,
+    and sets out a methodological agenda for the field.
+
+# ---------- EEG: states, traits and oscillations ----------
+- id: lutz-2004-gamma
+  title: "Long-term meditators self-induce high-amplitude gamma synchrony during mental practice"
+  authors: "Lutz A, et al."
+  year: 2004
+  venue: PNAS
+  doi: 10.1073/pnas.0407401101
+  verified: true
+  type: empirical
+  practices: [compassion, non-dual]
+  modalities: [EEG]
+  topics: [gamma, long-term-practitioners, synchrony]
+  summary: >
+    Tibetan Buddhist practitioners generating non-referential compassion showed unusually large
+    gamma-band power and synchrony compared with novices.
+
+- id: cahn-2006-states-traits
+  title: "Meditation states and traits: EEG, ERP, and neuroimaging studies"
+  authors: "Cahn BR, Polich J"
+  year: 2006
+  venue: Psychological Bulletin
+  doi: 10.1037/0033-2909.132.2.180
+  verified: true
+  type: review
+  practices: [mixed]
+  modalities: [EEG, fMRI]
+  topics: [state-vs-trait, alpha, theta, ERP]
+  summary: >
+    Classic review separating short-term state effects from long-term trait effects, with
+    alpha and theta changes as the most consistent EEG findings at the time.
+
+- id: cahn-2010-vipassana-gamma
+  title: "Occipital gamma activation during Vipassana meditation"
+  authors: "Cahn BR, et al."
+  year: 2010
+  venue: Cognitive Processing
+  doi: 10.1007/s10339-009-0352-1
+  verified: true
+  type: empirical
+  practices: [open-monitoring]
+  modalities: [EEG]
+  topics: [gamma, vipassana, long-term-practitioners]
+  summary: >
+    Long-term Vipassana practitioners showed increased occipital gamma power during
+    meditation relative to a control thinking state.
+
+- id: lomas-2015-eeg-review
+  title: "A systematic review of the neurophysiology of mindfulness on EEG oscillations"
+  authors: "Lomas T, et al."
+  year: 2015
+  venue: Neuroscience & Biobehavioral Reviews
+  doi: 10.1016/j.neubiorev.2015.09.018
+  verified: true
+  type: review
+  practices: [mindfulness-program, mixed]
+  modalities: [EEG]
+  topics: [alpha, theta, systematic-review]
+  summary: >
+    Systematic review of EEG oscillation studies; increased alpha and theta are the most
+    consistent findings, while gamma and beta results are mixed.
+
+- id: braboszcz-2017-gamma-traditions
+  title: "Increased Gamma Brainwave Amplitude Compared to Control in Three Different Meditation Traditions"
+  authors: "Braboszcz C, et al."
+  year: 2017
+  venue: PLOS ONE
+  doi: 10.1371/journal.pone.0170647
+  verified: true
+  type: empirical
+  practices: [open-monitoring, focused-attention, mantra]
+  modalities: [EEG]
+  topics: [gamma, vipassana, himalayan-yoga, isha-shoonya]
+  summary: >
+    Compared Vipassana, Himalayan Yoga and Isha Shoonya practitioners with controls and found
+    higher parieto-occipital gamma across traditions.
+
+- id: brandmeyer-2018-mind-wandering
+  title: "Reduced mind wandering in experienced meditators and associated EEG correlates"
+  authors: "Brandmeyer T, Delorme A"
+  year: 2018
+  venue: Experimental Brain Research
+  doi: 10.1007/s00221-016-4811-5
+  verified: true
+  type: empirical
+  practices: [focused-attention, open-monitoring]
+  modalities: [EEG]
+  topics: [mind-wandering, frontal-midline-theta, experience-sampling, open-data]
+  summary: >
+    Experience-sampling probes during meditation showed experts reported less mind wandering;
+    frontal midline theta and somatosensory alpha were higher during meditation than during
+    wandering. The data are openly shared (see datasets).
+
+- id: ferrarelli-2013-sleep-gamma
+  title: "Experienced mindfulness meditators exhibit higher parietal-occipital EEG gamma activity during NREM sleep"
+  authors: "Ferrarelli F, et al."
+  year: 2013
+  venue: PLOS ONE
+  doi: 10.1371/journal.pone.0073417
+  verified: true
+  type: empirical
+  practices: [mixed]
+  modalities: [EEG]
+  topics: [gamma, sleep, trait]
+  summary: >
+    Long-term practitioners showed elevated parieto-occipital gamma during NREM sleep,
+    suggesting a trait effect that persists outside practice.
+
+- id: berkovich-ohana-2012-gamma-dmn
+  title: "Mindfulness-induced changes in gamma band activity – implications for the default mode network, self-reference and attention"
+  authors: "Berkovich-Ohana A, et al."
+  year: 2012
+  venue: Clinical Neurophysiology
+  doi: 10.1016/j.clinph.2011.07.048
+  verified: true
+  type: empirical
+  practices: [mindfulness-program]
+  modalities: [EEG]
+  topics: [gamma, default-mode-network, self-reference]
+  summary: >
+    Relates practice-related gamma changes in experienced mindfulness meditators to reduced
+    default-mode, self-referential activity.
+
+- id: kerr-2013-alpha-body
+  title: "Mindfulness starts with the body: somatosensory attention and top-down modulation of cortical alpha rhythms in mindfulness meditation"
+  authors: "Kerr CE, et al."
+  year: 2013
+  venue: Frontiers in Human Neuroscience
+  doi: 10.3389/fnhum.2013.00012
+  verified: true
+  type: theory
+  practices: [mindfulness-program]
+  modalities: [EEG, MEG]
+  topics: [alpha, somatosensory, body-scan, sensory-gating]
+  summary: >
+    Proposes that early mindfulness training works by sharpening top-down control of
+    somatosensory alpha rhythms during body-focused attention.
+
+- id: rodriguez-larios-2022-nonlinear
+  title: "Nonlinear EEG signatures of mind wandering during breath focus meditation"
+  authors: "Rodriguez-Larios J, et al."
+  year: 2022
+  venue: Current Research in Neurobiology
+  doi: 10.1016/j.crneur.2022.100056
+  verified: true
+  type: empirical
+  practices: [focused-attention]
+  modalities: [EEG]
+  topics: [mind-wandering, complexity, nonlinear, novices]
+  summary: >
+    Tests whether nonlinear (complexity) EEG measures distinguish mind wandering from breath
+    focus in novice meditators.
+
+- id: aviad-2024-oscillating-mindfully
+  title: "Oscillating Mindfully: Using Machine Learning to Characterize Systems-Level Electrophysiological Activity During Focused Attention Meditation"
+  authors: "Aviad N, et al."
+  year: 2024
+  venue: Biological Psychiatry Global Open Science
+  doi: 10.1016/j.bpsgos.2024.100423
+  verified: true
+  type: empirical
+  practices: [focused-attention]
+  modalities: [EEG]
+  topics: [machine-learning, xgboost, feature-importance, mind-wandering]
+  summary: >
+    Gradient-boosted classifiers with feature-importance analysis separated focused attention
+    from mind wandering in 26 experienced meditators, highlighting high-frequency power and
+    coherence features.
+
+- id: lin-2025-eeg-mindfulness-methods
+  title: "Using Electroencephalography to Advance Mindfulness Science: A Survey of Emerging Methods and Approaches"
+  authors: "Lin Y, Atad DA, Zanesco AP"
+  year: 2025
+  venue: "Biological Psychiatry: Cognitive Neuroscience and Neuroimaging"
+  doi: 10.1016/j.bpsc.2024.09.012
+  verified: true
+  type: review
+  practices: [mindfulness-program]
+  modalities: [EEG]
+  topics: [methods, aperiodic, complexity, microstates, translational]
+  summary: >
+    Survey of newer EEG analyses for mindfulness research, including separating oscillatory
+    from aperiodic activity and complexity measures, with notes on their caveats.
+
+# ---------- fMRI and structural MRI ----------
+- id: brefczynski-lewis-2007-attentional-expertise
+  title: "Neural correlates of attentional expertise in long-term meditation practitioners"
+  authors: "Brefczynski-Lewis JA, et al."
+  year: 2007
+  venue: PNAS
+  doi: 10.1073/pnas.0606552104
+  verified: true
+  type: empirical
+  practices: [focused-attention]
+  modalities: [fMRI]
+  topics: [attention, expertise, inverted-u]
+  summary: >
+    Concentration meditation engaged attention networks in an inverted-U relation with
+    practice hours: moderate experts showed more activation than novices, the most practised
+    showed less.
+
+- id: brewer-2011-dmn
+  title: "Meditation experience is associated with differences in default mode network activity and connectivity"
+  authors: "Brewer JA, et al."
+  year: 2011
+  venue: PNAS
+  doi: 10.1073/pnas.1112029108
+  verified: true
+  type: empirical
+  practices: [focused-attention, open-monitoring, compassion]
+  modalities: [fMRI]
+  topics: [default-mode-network, connectivity, mind-wandering]
+  summary: >
+    Experienced meditators showed lower activity in core default-mode regions across several
+    practices, and stronger coupling between posterior cingulate and control regions.
+
+- id: hasenkamp-2012-mind-wandering
+  title: "Mind wandering and attention during focused meditation: A fine-grained temporal analysis of fluctuating cognitive states"
+  authors: "Hasenkamp W, et al."
+  year: 2012
+  venue: NeuroImage
+  doi: 10.1016/j.neuroimage.2011.07.008
+  verified: true
+  type: empirical
+  practices: [focused-attention]
+  modalities: [fMRI]
+  topics: [mind-wandering, salience-network, default-mode-network, button-press]
+  summary: >
+    Participants pressed a button when they noticed mind wandering, revealing a cycle of
+    wandering, awareness, shifting and sustained attention with distinct network activity.
+
+- id: garrison-2015-dmn-beyond-task
+  title: "Meditation leads to reduced default mode network activity beyond an active task"
+  authors: "Garrison KA, et al."
+  year: 2015
+  venue: "Cognitive, Affective, & Behavioral Neuroscience"
+  doi: 10.3758/s13415-015-0358-3
+  verified: true
+  type: empirical
+  practices: [mixed]
+  modalities: [fMRI]
+  topics: [default-mode-network, active-baseline]
+  summary: >
+    Compared with an active cognitive task baseline, meditation still reduced activity in
+    default-mode regions such as posterior cingulate cortex.
+
+- id: farb-2007-self-reference
+  title: "Attending to the present: mindfulness meditation reveals distinct neural modes of self-reference"
+  authors: "Farb NAS, et al."
+  year: 2007
+  venue: Social Cognitive and Affective Neuroscience
+  doi: 10.1093/scan/nsm030
+  verified: true
+  type: empirical
+  practices: [mindfulness-program]
+  modalities: [fMRI]
+  topics: [self-reference, narrative-vs-experiential, insula]
+  summary: >
+    After mindfulness training, experiential (moment-to-moment) self-focus shifted activity
+    away from medial prefrontal narrative regions toward lateral and insular regions.
+
+- id: lutz-2008-compassion-emotion
+  title: "Regulation of the neural circuitry of emotion by compassion meditation: effects of meditative expertise"
+  authors: "Lutz A, et al."
+  year: 2008
+  venue: PLOS ONE
+  doi: 10.1371/journal.pone.0001897
+  verified: true
+  type: empirical
+  practices: [compassion]
+  modalities: [fMRI]
+  topics: [compassion, insula, emotional-sounds, expertise]
+  summary: >
+    During compassion meditation, experts showed stronger insula and cingulate responses to
+    emotional vocal sounds than novices.
+
+- id: weng-2013-compassion-altruism
+  title: "Compassion training alters altruism and neural responses to suffering"
+  authors: "Weng HY, et al."
+  year: 2013
+  venue: Psychological Science
+  doi: 10.1177/0956797612469537
+  verified: true
+  type: empirical
+  practices: [compassion]
+  modalities: [fMRI, behavior]
+  topics: [compassion, altruism, training-study]
+  summary: >
+    Two weeks of compassion training increased altruistic redistribution in an economic game,
+    and this was linked to changed responses to images of suffering.
+
+- id: klimecki-2014-empathy-compassion
+  title: "Differential pattern of functional brain plasticity after compassion and empathy training"
+  authors: "Klimecki OM, et al."
+  year: 2014
+  venue: Social Cognitive and Affective Neuroscience
+  doi: 10.1093/scan/nst060
+  verified: true
+  type: empirical
+  practices: [compassion]
+  modalities: [fMRI]
+  topics: [empathy, compassion, plasticity, negative-affect]
+  summary: >
+    Empathy training increased negative affect and related activity, while subsequent
+    compassion training raised positive affect and engaged reward-related regions.
+
+- id: weng-2020-breath-decoding
+  title: "Focus on the breath: Brain decoding reveals internal states of attention during meditation"
+  authors: "Weng HY, et al."
+  year: 2020
+  venue: Frontiers in Human Neuroscience
+  doi: 10.3389/fnhum.2020.00336
+  verified: true
+  type: empirical
+  practices: [focused-attention]
+  modalities: [fMRI]
+  topics: [decoding, machine-learning, attention-states]
+  summary: >
+    Trained brain-pattern classifiers on attention tasks and applied them to meditation to
+    estimate moment-to-moment breath focus versus mind wandering.
+
+- id: lazar-2005-cortical-thickness
+  title: "Meditation experience is associated with increased cortical thickness"
+  authors: "Lazar SW, et al."
+  year: 2005
+  venue: NeuroReport
+  doi: 10.1097/01.wnr.0000186598.66243.19
+  verified: true
+  type: empirical
+  practices: [open-monitoring]
+  modalities: [sMRI]
+  topics: [cortical-thickness, insula, cross-sectional]
+  summary: >
+    Cross-sectional study reporting thicker prefrontal and insular cortex in experienced
+    insight meditators. Small sample; later work urges caution.
+
+- id: holzel-2011-gray-matter
+  title: "Mindfulness practice leads to increases in regional brain gray matter density"
+  authors: "Hölzel BK, et al."
+  year: 2011
+  venue: "Psychiatry Research: Neuroimaging"
+  doi: 10.1016/j.pscychresns.2010.08.006
+  verified: true
+  type: empirical
+  practices: [mindfulness-program]
+  modalities: [sMRI]
+  topics: [gray-matter, MBSR, hippocampus, longitudinal]
+  summary: >
+    Early longitudinal MBSR study reporting gray-matter density increases. Not reproduced in
+    the much larger trial by Kral et al. (2022).
+
+- id: fox-2014-morphometry-meta
+  title: "Is meditation associated with altered brain structure? A systematic review and meta-analysis of morphometric neuroimaging in meditation practitioners"
+  authors: "Fox KCR, et al."
+  year: 2014
+  venue: Neuroscience & Biobehavioral Reviews
+  doi: 10.1016/j.neubiorev.2014.03.016
+  verified: true
+  type: meta-analysis
+  practices: [mixed]
+  modalities: [sMRI]
+  topics: [morphometry, publication-bias, insula]
+  summary: >
+    Meta-analysis of structural studies finding modest, regionally consistent differences,
+    alongside a warning about publication bias and small samples.
+
+- id: fox-2016-functional-meta
+  title: "Functional neuroanatomy of meditation: A review and meta-analysis of 78 functional neuroimaging investigations"
+  authors: "Fox KCR, et al."
+  year: 2016
+  venue: Neuroscience & Biobehavioral Reviews
+  doi: 10.1016/j.neubiorev.2016.03.021
+  verified: true
+  type: meta-analysis
+  practices: [focused-attention, open-monitoring, compassion, mantra]
+  modalities: [fMRI]
+  topics: [ALE, practice-specific, activation-likelihood]
+  summary: >
+    Coordinate-based meta-analysis showing that different practice families recruit
+    partly distinct networks rather than a single "meditation" signature.
+
+- id: kral-2022-no-structural-change
+  title: "Absence of structural brain changes from mindfulness-based stress reduction: Two combined randomized controlled trials"
+  authors: "Kral TRA, et al."
+  year: 2022
+  venue: Science Advances
+  doi: 10.1126/sciadv.abk3316
+  verified: true
+  type: empirical
+  practices: [mindfulness-program]
+  modalities: [sMRI]
+  topics: [MBSR, null-result, active-control, replication, RCT]
+  summary: >
+    Pooled two randomized trials (n = 218) with active and waitlist controls and found no
+    MBSR-specific change in gray-matter volume or cortical thickness after eight weeks.
+
+- id: valk-2017-social-brain
+  title: "Structural plasticity of the social brain: Differential change after socio-affective and cognitive mental training"
+  authors: "Valk SL, et al."
+  year: 2017
+  venue: Science Advances
+  doi: 10.1126/sciadv.1700489
+  verified: true
+  type: empirical
+  practices: [focused-attention, compassion, mixed]
+  modalities: [sMRI]
+  topics: [ReSource, cortical-thickness, longitudinal, social-cognition]
+  summary: >
+    In the nine-month ReSource Project, each training module produced its own pattern of
+    cortical thickness change, matched to behavioural gains.
+
+- id: engert-2017-cortisol
+  title: "Specific reduction in cortisol stress reactivity after social but not attention-based mental training"
+  authors: "Engert V, et al."
+  year: 2017
+  venue: Science Advances
+  doi: 10.1126/sciadv.1700495
+  verified: true
+  type: empirical
+  practices: [compassion, focused-attention]
+  modalities: [physiology]
+  topics: [ReSource, cortisol, stress, TSST]
+  summary: >
+    In the ReSource Project, socio-affective and socio-cognitive (dyadic) modules lowered
+    cortisol responses to a social stressor; attention-based training did not.
+
+- id: ganesan-2025-enigma-meditation
+  title: "ENIGMA-Meditation: Worldwide Consortium for Neuroscientific Investigations of Meditation Practices"
+  authors: "Ganesan S, et al."
+  year: 2025
+  venue: "Biological Psychiatry: Cognitive Neuroscience and Neuroimaging"
+  doi: 10.1016/j.bpsc.2024.10.015
+  verified: true
+  type: methods
+  practices: [mixed]
+  modalities: [fMRI, sMRI]
+  topics: [consortium, mega-analysis, harmonization, reproducibility]
+  summary: >
+    Launches an ENIGMA working group to pool meditation neuroimaging datasets worldwide with
+    shared pipelines for meta- and mega-analysis.
+
+- id: nbr-2026-functional-meta
+  title: "The functional neuroimaging of meditation: A quantitative whole-brain meta-analysis and systematic review"
+  authors: "See DOI"
+  year: 2026
+  venue: Neuroscience & Biobehavioral Reviews
+  doi: 10.1016/j.neubiorev.2026.106709
+  verified: true
+  type: meta-analysis
+  practices: [focused-attention, open-monitoring, mantra, compassion]
+  modalities: [fMRI]
+  topics: [meta-analysis, PRISMA, practice-comparison]
+  summary: >
+    Preregistered whole-brain meta-analysis of 34 fMRI studies (about 700 people) comparing
+    focused attention, open monitoring, mantra and loving-kindness practices.
+
+# ---------- Training studies and clinical evidence ----------
+- id: tang-2007-ibmt
+  title: "Short-term meditation training improves attention and self-regulation"
+  authors: "Tang YY, et al."
+  year: 2007
+  venue: PNAS
+  doi: 10.1073/pnas.0707678104
+  verified: true
+  type: empirical
+  practices: [mixed]
+  modalities: [behavior, physiology]
+  topics: [IBMT, attention-network-test, cortisol, RCT]
+  summary: >
+    Five days of integrative body-mind training improved executive attention and lowered
+    cortisol responses relative to relaxation training.
+
+- id: slagter-2007-attentional-blink
+  title: "Mental training affects distribution of limited brain resources"
+  authors: "Slagter HA, et al."
+  year: 2007
+  venue: PLOS Biology
+  doi: 10.1371/journal.pbio.0050138
+  verified: true
+  type: empirical
+  practices: [open-monitoring]
+  modalities: [EEG, behavior]
+  topics: [attentional-blink, P3b, retreat]
+  summary: >
+    A three-month Vipassana retreat reduced the attentional blink, with smaller P3b responses
+    to the first target suggesting more efficient resource allocation.
+
+- id: davidson-2003-immune
+  title: "Alterations in brain and immune function produced by mindfulness meditation"
+  authors: "Davidson RJ, et al."
+  year: 2003
+  venue: Psychosomatic Medicine
+  doi: 10.1097/01.PSY.0000077505.67574.E3
+  verified: true
+  type: empirical
+  practices: [mindfulness-program]
+  modalities: [EEG, physiology]
+  topics: [MBSR, frontal-asymmetry, immune, vaccine]
+  summary: >
+    Workplace MBSR increased left-sided frontal EEG activation and antibody response to a flu
+    vaccine compared with a waitlist.
+
+- id: mrazek-2013-gre
+  title: "Mindfulness training improves working memory capacity and GRE performance while reducing mind wandering"
+  authors: "Mrazek MD, et al."
+  year: 2013
+  venue: Psychological Science
+  doi: 10.1177/0956797612459659
+  verified: true
+  type: empirical
+  practices: [focused-attention]
+  modalities: [behavior]
+  topics: [mind-wandering, working-memory, cognition]
+  summary: >
+    Two weeks of mindfulness training reduced mind wandering and improved working memory and
+    reading comprehension scores versus a nutrition class.
+
+- id: goyal-2014-jama
+  title: "Meditation programs for psychological stress and well-being: a systematic review and meta-analysis"
+  authors: "Goyal M, et al."
+  year: 2014
+  venue: JAMA Internal Medicine
+  doi: 10.1001/jamainternmed.2013.13018
+  verified: false
+  type: meta-analysis
+  practices: [mindfulness-program, mantra]
+  modalities: [behavior]
+  topics: [clinical, anxiety, depression, pain, RCT]
+  summary: >
+    Mindfulness programs showed moderate evidence for reducing anxiety, depression and pain,
+    with little evidence for mantra programs. Effects were comparable to other active
+    treatments.
+
+- id: goldberg-2018-psychiatric
+  title: "Mindfulness-based interventions for psychiatric disorders: A systematic review and meta-analysis"
+  authors: "Goldberg SB, et al."
+  year: 2018
+  venue: Clinical Psychology Review
+  doi: 10.1016/j.cpr.2017.10.011
+  verified: true
+  type: meta-analysis
+  practices: [mindfulness-program]
+  modalities: [behavior]
+  topics: [clinical, depression, addiction, RCT]
+  summary: >
+    Mindfulness interventions outperformed no treatment and some active controls across
+    psychiatric conditions, and matched evidence-based treatments.
+
+- id: wielgosz-2019-psychopathology
+  title: "Mindfulness Meditation and Psychopathology"
+  authors: "Wielgosz J, et al."
+  year: 2019
+  venue: Annual Review of Clinical Psychology
+  doi: 10.1146/annurev-clinpsy-021815-093423
+  verified: true
+  type: review
+  practices: [mindfulness-program]
+  modalities: [none]
+  topics: [clinical, mechanisms, depression]
+  summary: >
+    Reviews clinical evidence and candidate mechanisms for mindfulness in depression,
+    anxiety, addiction and other conditions.
+
+- id: galante-2023-ipd-meta
+  title: "Systematic review and individual participant data meta-analysis of randomized controlled trials assessing mindfulness-based programs for mental health promotion"
+  authors: "Galante J, et al."
+  year: 2023
+  venue: Nature Mental Health
+  doi: 10.1038/s44220-023-00081-5
+  verified: true
+  type: meta-analysis
+  practices: [mindfulness-program]
+  modalities: [behavior]
+  topics: [IPD-meta-analysis, prevention, RCT, heterogeneity]
+  summary: >
+    Individual-participant meta-analysis of trials in non-clinical settings: small average
+    benefits for distress, with little evidence that benefits differ by participant traits.
+
+- id: kok-2017-dyads
+  title: "Effects of Contemplative Dyads on Engagement and Perceived Social Connectedness Over 9 Months of Mental Training: A Randomized Clinical Trial"
+  authors: "Kok BE, Singer T"
+  year: 2017
+  venue: JAMA Psychiatry
+  doi: 10.1001/jamapsychiatry.2016.3360
+  verified: true
+  type: empirical
+  practices: [compassion, mixed]
+  modalities: [behavior]
+  topics: [ReSource, dyads, social-connectedness]
+  summary: >
+    Partner-based contemplative dyads in the ReSource Project increased daily feelings of
+    social connection compared with solitary practice.
+
+# ---------- Pain ----------
+- id: zeidan-2011-pain
+  title: "Brain mechanisms supporting the modulation of pain by mindfulness meditation"
+  authors: "Zeidan F, et al."
+  year: 2011
+  venue: Journal of Neuroscience
+  doi: 10.1523/JNEUROSCI.5791-10.2011
+  verified: true
+  type: empirical
+  practices: [focused-attention]
+  modalities: [fMRI]
+  topics: [pain, ASL, anterior-cingulate, insula]
+  summary: >
+    After four days of training, meditating reduced pain ratings, linked to activity in
+    anterior cingulate, insula and orbitofrontal cortex.
+
+- id: grant-2011-zen-pain
+  title: "A non-elaborative mental stance and decoupling of executive and pain-related cortices predicts low pain sensitivity in Zen meditators"
+  authors: "Grant JA, et al."
+  year: 2011
+  venue: Pain
+  doi: 10.1016/j.pain.2010.10.006
+  verified: true
+  type: empirical
+  practices: [open-monitoring]
+  modalities: [fMRI]
+  topics: [pain, zen, decoupling, prefrontal]
+  summary: >
+    Zen practitioners showed lower pain sensitivity with reduced prefrontal engagement and
+    decoupling between executive and pain-related regions.
+
+- id: lutz-2013-insula-pain
+  title: "Altered anterior insula activation during anticipation and experience of painful stimuli in expert meditators"
+  authors: "Lutz A, et al."
+  year: 2013
+  venue: NeuroImage
+  doi: 10.1016/j.neuroimage.2012.09.030
+  verified: true
+  type: empirical
+  practices: [open-monitoring]
+  modalities: [fMRI]
+  topics: [pain, anticipation, insula, habituation]
+  summary: >
+    Expert practitioners in open presence rated pain as less unpleasant, with higher insula
+    activity during pain and faster habituation in amygdala.
+
+# ---------- Self, non-duality and altered states ----------
+- id: josipovic-2014-nondual
+  title: "Neural correlates of nondual awareness in meditation"
+  authors: "Josipovic Z"
+  year: 2014
+  venue: Annals of the New York Academy of Sciences
+  doi: 10.1111/nyas.12261
+  verified: true
+  type: review
+  practices: [non-dual]
+  modalities: [fMRI]
+  topics: [nondual, anticorrelated-networks, self]
+  summary: >
+    Reviews evidence that nondual awareness alters the usual anticorrelation between
+    intrinsic (default) and extrinsic (task-positive) networks.
+
+- id: milliere-2018-psychedelics-meditation
+  title: "Psychedelics, Meditation, and Self-Consciousness"
+  authors: "Millière R, et al."
+  year: 2018
+  venue: Frontiers in Psychology
+  doi: 10.3389/fpsyg.2018.01475
+  verified: true
+  type: review
+  practices: [non-dual, advanced]
+  modalities: [none]
+  topics: [self-loss, psychedelics, ego-dissolution, phenomenology]
+  summary: >
+    Compares self-loss in meditation and psychedelic states, arguing both are tools for
+    dissecting the components of self-consciousness.
+
+# ---------- Advanced meditation and neurophenomenology ----------
+- id: chowdhury-2023-cessation-eeg
+  title: "Investigation of advanced mindfulness meditation “cessation” experiences using EEG spectral analysis in an intensively sampled case study"
+  authors: "Chowdhury A, et al."
+  year: 2023
+  venue: Neuropsychologia
+  doi: 10.1016/j.neuropsychologia.2023.108694
+  verified: true
+  type: empirical
+  practices: [advanced, open-monitoring]
+  modalities: [EEG]
+  topics: [cessation, nirodha, alpha, case-study, neurophenomenology]
+  summary: >
+    Thirty-seven cessation events in one adept showed a large alpha-power decline beginning
+    about 40 seconds before each event, lowest just after it.
+
+- id: van-lutterveld-2024-cessation-network
+  title: "Neurophenomenological Investigation of Mindfulness Meditation “Cessation” Experiences Using EEG Network Analysis in an Intensively Sampled Adept Meditator"
+  authors: "van Lutterveld R, et al."
+  year: 2024
+  venue: Brain Topography
+  doi: 10.1007/s10548-024-01052-4
+  verified: true
+  type: empirical
+  practices: [advanced]
+  modalities: [EEG]
+  topics: [cessation, network-analysis, case-study]
+  summary: >
+    Network analysis of the same cessation recordings showing large-scale changes in
+    functional connectivity around cessation events.
+
+- id: yang-2024-jhana-7t
+  title: "Intensive whole-brain 7T MRI case study of volitional control of brain activity in deep absorptive meditation states"
+  authors: "Yang WFZ, et al."
+  year: 2024
+  venue: Cerebral Cortex
+  doi: 10.1093/cercor/bhad408
+  verified: true
+  type: empirical
+  practices: [advanced, focused-attention]
+  modalities: [fMRI]
+  topics: [jhana, 7T, brainstem, thalamus, case-study]
+  summary: >
+    Twenty-seven 7T fMRI runs over five days in one adept during jhana revealed state-specific
+    activity in cortex, thalamus, brainstem and cerebellum, related to rated jhana qualities.
+
+- id: chowdhury-2025-jhana-multimodal
+  title: "Multimodal neurophenomenology of advanced concentration absorption meditation: An intensively sampled case study of Jhana"
+  authors: "Chowdhury A, et al."
+  year: 2025
+  venue: NeuroImage
+  doi: 10.1016/j.neuroimage.2024.120973
+  verified: true
+  type: empirical
+  practices: [advanced]
+  modalities: [fMRI, EEG]
+  topics: [jhana, functional-connectivity, modularity, bliss, case-study]
+  summary: >
+    Combined fMRI, EEG and experience ratings in one practitioner with over 23,000 hours;
+    jhana states showed reduced network modularity and default–visual desegregation.
+
+- id: abellaneda-perez-2024-nibs
+  title: "Neuromodulation and meditation: A review and synthesis toward promoting well-being and understanding consciousness and brain"
+  authors: "Abellaneda-Pérez K, et al."
+  year: 2024
+  venue: Neuroscience & Biobehavioral Reviews
+  doi: 10.1016/j.neubiorev.2024.105862
+  verified: true
+  type: review
+  practices: [mixed, advanced]
+  modalities: [NIBS]
+  topics: [TMS, tDCS, causal-methods, neurofeedback]
+  summary: >
+    Reviews studies combining non-invasive brain stimulation with meditation and argues for
+    using stimulation to test causal mechanisms, including of advanced states.
+
+# ---------- Spontaneous thought (background) ----------
+- id: raichle-2001-default-mode
+  title: "A default mode of brain function"
+  authors: "Raichle ME, et al."
+  year: 2001
+  venue: PNAS
+  doi: 10.1073/pnas.98.2.676
+  verified: true
+  type: empirical
+  practices: [none]
+  modalities: [fMRI]
+  topics: [default-mode-network, background]
+  summary: >
+    Defines the brain's resting "default mode", the network that meditation studies most
+    often report as changed.
+
+- id: christoff-2016-spontaneous-thought
+  title: "Mind-wandering as spontaneous thought: a dynamic framework"
+  authors: "Christoff K, et al."
+  year: 2016
+  venue: Nature Reviews Neuroscience
+  doi: 10.1038/nrn.2016.113
+  verified: true
+  type: theory
+  practices: [none]
+  modalities: [none]
+  topics: [mind-wandering, constraints, background]
+  summary: >
+    Describes mind wandering as thought with weak deliberate and automatic constraints,
+    a useful lens for what meditation trains.
+
+# ---------- Methods, standards and datasets ----------
+- id: donoghue-2020-specparam
+  title: "Parameterizing neural power spectra into periodic and aperiodic components"
+  authors: "Donoghue T, et al."
+  year: 2020
+  venue: Nature Neuroscience
+  doi: 10.1038/s41593-020-00744-x
+  verified: true
+  type: tool
+  practices: [none]
+  modalities: [EEG, MEG]
+  topics: [aperiodic, 1/f, specparam, fooof, methods]
+  summary: >
+    Introduces FOOOF (now specparam) for separating oscillatory peaks from the aperiodic
+    1/f component, important for re-reading older band-power meditation findings.
+
+- id: gramfort-2013-mne
+  title: "MEG and EEG data analysis with MNE-Python"
+  authors: "Gramfort A, et al."
+  year: 2013
+  venue: Frontiers in Neuroscience
+  doi: 10.3389/fnins.2013.00267
+  verified: true
+  type: tool
+  practices: [none]
+  modalities: [EEG, MEG]
+  topics: [software, preprocessing, source-imaging]
+  summary: The reference paper for MNE-Python, the most widely used open EEG/MEG toolbox in Python.
+
+- id: gorgolewski-2016-bids
+  title: "The brain imaging data structure, a format for organizing and describing outputs of neuroimaging experiments"
+  authors: "Gorgolewski KJ, et al."
+  year: 2016
+  venue: Scientific Data
+  doi: 10.1038/sdata.2016.44
+  verified: true
+  type: methods
+  practices: [none]
+  modalities: [fMRI, sMRI]
+  topics: [BIDS, standards, open-data]
+  summary: Defines BIDS, the folder and metadata standard used by OpenNeuro and most open datasets listed here.
+
+- id: pernet-2019-eeg-bids
+  title: "EEG-BIDS, an extension to the brain imaging data structure for electroencephalography"
+  authors: "Pernet CR, et al."
+  year: 2019
+  venue: Scientific Data
+  doi: 10.1038/s41597-019-0104-8
+  verified: true
+  type: methods
+  practices: [none]
+  modalities: [EEG]
+  topics: [BIDS, standards, open-data]
+  summary: Extends BIDS to EEG so recordings can be shared and loaded with standard tools.
+
+- id: markiewicz-2021-openneuro
+  title: "The OpenNeuro resource for sharing of neuroscience data"
+  authors: "Markiewicz CJ, et al."
+  year: 2021
+  venue: eLife
+  doi: 10.7554/eLife.71774
+  verified: true
+  type: methods
+  practices: [none]
+  modalities: [EEG, MEG, fMRI, sMRI]
+  topics: [OpenNeuro, open-data, BIDS]
+  summary: Describes OpenNeuro, the main free archive for BIDS-formatted neuroimaging and electrophysiology data.
+
+- id: kent-2026-neurosynth-compose
+  title: "Neurosynth Compose: A web-based platform for flexible and reproducible neuroimaging meta-analysis"
+  authors: "Kent JD, et al."
+  year: 2026
+  venue: Imaging Neuroscience
+  doi: 10.1162/IMAG.a.1114
+  verified: true
+  type: tool
+  practices: [none]
+  modalities: [fMRI]
+  topics: [meta-analysis, NiMARE, NeuroStore, PRISMA]
+  summary: >
+    Web platform for curated, reproducible coordinate-based meta-analyses, built on NeuroStore
+    and executed with NiMARE.
+
+- id: scheltienne-2025-mne-lsl
+  title: "MNE-LSL: Real-time framework integrated with MNE-Python for online neuroscience research through LSL-compatible devices"
+  authors: "Scheltienne M, et al."
+  year: 2025
+  venue: Journal of Open Source Software
+  doi: 10.21105/joss.08088
+  verified: true
+  type: tool
+  practices: [none]
+  modalities: [EEG]
+  topics: [real-time, neurofeedback, LSL, streaming]
+  summary: Real-time streaming on top of MNE-Python via Lab Streaming Layer, useful for meditation neurofeedback.
+
+- id: li-2026-l-fame
+  title: "L-FAME: Longitudinal Focused Attention Meditation EEG Dataset and Benchmark"
+  authors: "Li A, et al."
+  year: 2026
+  venue: arXiv (NeurIPS 2026 Datasets & Benchmarks)
+  arxiv: "2605.22893"
+  verified: true
+  type: dataset
+  practices: [focused-attention, mantra]
+  modalities: [EEG]
+  topics: [benchmark, longitudinal, machine-learning, open-data]
+  summary: >
+    Pre/post EEG from 74 students across six weeks of breath-focus or mantra training, with
+    benchmark tasks for state decoding, technique classification and cross-session transfer.
+
+- id: aristimunha-2026-eegdash
+  title: "EEGDash: An open-source platform for machine learning on public neurophysiological data"
+  authors: "Aristimunha B, et al."
+  year: 2026
+  venue: arXiv
+  arxiv: "2606.16041"
+  verified: true
+  type: tool
+  practices: [none]
+  modalities: [EEG, MEG]
+  topics: [open-data, machine-learning, braindecode, OpenNeuro, NEMAR]
+  summary: >
+    Registry and loader that streams public BIDS EEG/MEG datasets from OpenNeuro and NEMAR
+    straight into PyTorch and braindecode.
+
+# ---------- Machine learning for EEG and scientific text ----------
+- id: jiang-2024-labram
+  title: "Large Brain Model for Learning Generic Representations with Tremendous EEG Data in BCI"
+  authors: "Jiang WB, Zhao LM, Lu BL"
+  year: 2024
+  venue: ICLR 2024
+  arxiv: "2405.18765"
+  verified: false
+  type: tool
+  practices: [none]
+  modalities: [EEG]
+  topics: [foundation-model, LaBraM, self-supervised]
+  summary: A widely used EEG foundation model pretrained on large pooled EEG with channel-wise patches and a neural codebook.
+
+- id: wang-2024-cbramod
+  title: "CBraMod: A Criss-Cross Brain Foundation Model for EEG Decoding"
+  authors: "Wang J, et al."
+  year: 2024
+  venue: arXiv (ICLR 2025)
+  arxiv: "2412.07236"
+  verified: true
+  type: tool
+  practices: [none]
+  modalities: [EEG]
+  topics: [foundation-model, CBraMod, emotion-recognition]
+  summary: EEG foundation model with criss-cross spatial/temporal attention, evaluated on 10 downstream BCI tasks.
+
+- id: xiong-2025-eeg-fm-bench
+  title: "EEG-FM-Bench: A Comprehensive Benchmark for the Systematic Evaluation of EEG Foundation Models"
+  authors: "Xiong W, et al."
+  year: 2025
+  venue: arXiv
+  arxiv: "2508.17742"
+  verified: true
+  type: methods
+  practices: [none]
+  modalities: [EEG]
+  topics: [foundation-model, benchmark, LaBraM, CBraMod, REVE]
+  summary: Standardised benchmark comparing EEG foundation models (BENDR, BIOT, LaBraM, EEGPT, CBraMod, CSBrain, REVE).
+
+- id: singh-2022-scirepeval
+  title: "SciRepEval: A Multi-Format Benchmark for Scientific Document Representations"
+  authors: "Singh A, et al."
+  year: 2022
+  venue: arXiv (EMNLP 2023)
+  arxiv: "2211.13308"
+  verified: false
+  type: tool
+  practices: [none]
+  modalities: [computational]
+  topics: [SPECTER2, embeddings, scientific-text, CLM]
+  summary: Introduces SPECTER2 and the SciRepEval benchmark for scientific paper embeddings; a strong baseline for the paper finder.
+
+- id: reimers-2019-sbert
+  title: "Sentence-BERT: Sentence Embeddings using Siamese BERT-Networks"
+  authors: "Reimers N, Gurevych I"
+  year: 2019
+  venue: EMNLP 2019
+  arxiv: "1908.10084"
+  verified: false
+  type: tool
+  practices: [none]
+  modalities: [computational]
+  topics: [embeddings, contrastive, sentence-transformers, CLM]
+  summary: The sentence-transformers approach behind MiniLM-style encoders used by the paper finder.
+
+# ---------- Attention residue and task switching ----------
+- id: leroy-2009-attention-residue
+  title: "Why is it so hard to do my work? The challenge of attention residue when switching between work tasks"
+  authors: "Leroy S"
+  year: 2009
+  venue: Organizational Behavior and Human Decision Processes
+  doi: 10.1016/j.obhdp.2009.04.002
+  verified: true
+  type: empirical
+  practices: [none]
+  modalities: [behavior]
+  topics: [attention-residue, task-switching, interruptions]
+  summary: >
+    Introduces attention residue: after switching away from a task, thoughts about it persist
+    and hurt performance on the next task, especially when the first task was left unfinished.
+    The origin of the concept.
+
+- id: leroy-2016-regulatory-focus
+  title: "The effect of regulatory focus on attention residue and performance during interruptions"
+  authors: "Leroy S, Schmidt AM"
+  year: 2016
+  venue: Organizational Behavior and Human Decision Processes
+  doi: 10.1016/j.obhdp.2016.07.006
+  verified: true
+  type: empirical
+  practices: [none]
+  modalities: [behavior]
+  topics: [attention-residue, interruptions, regulatory-focus]
+  summary: >
+    Tests whether a person's motivational orientation (promotion versus prevention focus)
+    changes how much residue an interruption leaves and how well they perform afterwards.
+
+- id: leroy-2018-tasks-interrupted
+  title: "Tasks Interrupted: How Anticipating Time Pressure on Resumption of an Interrupted Task Causes Attention Residue and Low Performance on Interrupting Tasks and How a \"Ready-to-Resume\" Plan Mitigates the Effects"
+  authors: "Leroy S, Glomb TM"
+  year: 2018
+  venue: Organization Science
+  doi: 10.1287/orsc.2017.1184
+  verified: true
+  type: empirical
+  practices: [none]
+  modalities: [behavior]
+  topics: [attention-residue, interruptions, implementation-intentions]
+  summary: >
+    Four studies: expecting time pressure when returning to an interrupted task increases
+    residue and lowers performance on the interrupting task. Briefly planning the return
+    ("ready-to-resume") removes the effect, a simple intervention comparable to the
+    disengage-and-return step trained in meditation.
+
+- id: leroy-2020-interruptions-review
+  title: "Interruptions and Task Transitions: Understanding Their Characteristics, Processes, and Consequences"
+  authors: "Leroy S, Schmidt AM, Madjar N"
+  year: 2020
+  venue: Academy of Management Annals
+  doi: 10.5465/annals.2017.0146
+  verified: true
+  type: review
+  practices: [none]
+  modalities: [behavior]
+  topics: [attention-residue, interruptions, task-switching]
+  summary: >
+    Integrative review of research on interruptions and transitions between tasks, organising
+    what is known about their types, the attentional and motivational processes they set off,
+    and their consequences.
+
+- id: kuo-2015-reset-task-set
+  title: "Reset a task set after five minutes of mindfulness practice"
+  authors: "Kuo CY, Yeh YY"
+  year: 2015
+  venue: Consciousness and Cognition
+  doi: 10.1016/j.concog.2015.04.023
+  verified: true
+  type: empirical
+  practices: [mixed]
+  modalities: [behavior]
+  topics: [attention-residue, task-set-inertia, task-switching, brief-mindfulness]
+  summary: >
+    A previous task's attentional settings carried over into a new visual search task after
+    five minutes of scene viewing or distraction, but not after five minutes of mindfulness
+    practice. The closest laboratory evidence that meditation clears residue from a prior task.
+
+- id: jankowski-2020-attention-switching
+  title: "Effects of Brief Mindfulness Meditation on Attention Switching"
+  authors: "Jankowski T, Holas P"
+  year: 2020
+  venue: Mindfulness
+  doi: 10.1007/s12671-020-01314-9
+  verified: true
+  type: empirical
+  practices: [mixed]
+  modalities: [behavior]
+  topics: [task-switching, anxiety, brief-mindfulness]
+  summary: >
+    After an anxiety-inducing film, brief mindfulness training sped responses overall
+    compared with worry or free mind-wandering, but did not reduce the switch cost itself.
+    A useful null for claims that meditation specifically improves switching.
+
+- id: verhaeghen-2020-mindfulness-attention-meta
+  title: "Mindfulness as Attention Training: Meta-Analyses on the Links Between Attention Performance and Mindfulness Interventions, Long-Term Meditation Practice, and Trait Mindfulness"
+  authors: "Verhaeghen P"
+  year: 2020
+  venue: Mindfulness
+  doi: 10.1007/s12671-020-01532-1
+  verified: true
+  type: meta-analysis
+  practices: [mindfulness-program, mixed]
+  modalities: [behavior]
+  topics: [attention, task-switching, trait-mindfulness]
+  summary: >
+    Separate meta-analyses relating attention task performance to mindfulness interventions,
+    long-term practice and trait mindfulness; a starting point for judging which attention
+    components, including switching, meditation actually changes.
+
+- id: sumantry-2021-meditation-attention-meta
+  title: "Meditation, Mindfulness, and Attention: a Meta-analysis"
+  authors: "Sumantry D, Stewart KE"
+  year: 2021
+  venue: Mindfulness
+  doi: 10.1007/s12671-021-01593-w
+  verified: true
+  type: meta-analysis
+  practices: [mindfulness-program, mixed]
+  modalities: [behavior]
+  topics: [attention, executive-attention]
+  summary: >
+    Meta-analysis of meditation and mindfulness effects across attention measures; read with
+    Verhaeghen (2020) for the evidence on attentional control and disengagement.
+
+- id: krause-2026-digital-distraction-eeg
+  title: "Neuropsychological aspects of digital distraction: a randomized controlled experimental study"
+  authors: "Krause R"
+  year: 2026
+  venue: Frontiers in Psychology
+  doi: 10.3389/fpsyg.2026.1873941
+  verified: true
+  type: empirical
+  practices: [none]
+  modalities: [EEG, behavior]
+  topics: [interruptions, distraction, attention-residue, LSL]
+  summary: >
+    Randomised experiment (n = 87) combining executive-function tasks, workload ratings and
+    7-channel EEG recorded via LSL under intermittent audiovisual distraction. Error rates
+    barely changed; a template for measuring interruption costs neurally, not a meditation study.
